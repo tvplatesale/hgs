@@ -71,4 +71,55 @@
       background:#fff;
       color:var(--accent);
       border:2px solid var(--accent);
-      box-shadow
+      box-shadow:none;
+      margin-top:10px;
+    }
+    .btn-secondary:hover{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 8px 20px rgba(225,29,72,.3);
+    }
+    footer{
+      margin-top:28px; padding-top:18px; border-top:1px dashed #f4c8d2;
+      font-size:14px; opacity:.9;
+    }
+    a.link{ color:var(--accent); text-underline-offset:3px; text-decoration:none;}
+    a.link:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="logo" src="assets/logo.png" alt="HGS Preloved logo" width="170" height="170" />
+    <h1>HGS Preloved</h1>
+    <p class="tagline">Luxury preloved fashion, sustainably sourced from Adelaide, SA.</p>
+
+    <!-- ✅ Facebook link -->
+    <a
+      class="btn"
+      href="https://m.facebook.com/61576192851092/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open HGS Preloved on Facebook"
+    >
+      Shop the Collection
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M7 17L17 7M17 7H9M17 7v8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
+
+    <!-- ✅ View Catalogue button -->
+    <a
+      class="btn btn-secondary"
+      href="/catalogue.html"
+      aria-label="View the HGS product catalogue"
+    >
+      View Catalogue
+    </a>
+
+    <footer>
+      Contact us: <a class="link" href="mailto:hgs.preloved@gmail.com">hgs.preloved@gmail.com</a><br>
+      Follow us on <a class="link" href="https://m.facebook.com/61576192851092/" target="_blank" rel="noopener">Facebook</a>
+    </footer>
+  </main>
+</body>
+</html>
