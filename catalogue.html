@@ -6,170 +6,139 @@
   <title>Catalogue — HGS Preloved</title>
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
   <link rel="icon" href="assets/favicon-192.png" sizes="192x192" />
-  <!-- Use the same global styles -->
   <link rel="stylesheet" href="style.css" />
+
   <style>
-/* Smaller, tighter sizing for catalogue page */
-.wrap { width: min(92%, 960px); margin: 16px auto; }
-.hero-card { padding: 20px; border-radius: 20px; }
-.hero-card h1 { font-size: clamp(28px, 3vw, 36px); margin: 0 0 6px; }
-.sub { font-size: 14px; max-width: 52ch; }
+  /* Smaller, balanced layout for catalogue page */
+  body { padding: 20px; }
+  .wrap { width: min(92%, 960px); margin: 16px auto; }
 
-/* Grid + cards */
-.grid {
-  display: grid;
-  gap: 14px;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-}
-.card-item { border-radius: 16px; box-shadow: 0 10px 20px rgba(225,29,72,.12); }
-.card-item img { height: 200px; }
-.card-body { padding: 12px; gap: 6px; }
-.card-body h3 { font-size: 16px; }
-.meta { font-size: 13px; }
-.price { font-size: 16px; }
+  .topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+  }
 
-/* Buttons */
-.btn-sm {
-  padding: 9px 14px;
-  font-size: 13px;
-  box-shadow: 0 8px 18px rgba(225,29,72,.18);
-}
+  .back-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+  .back-link:hover { text-decoration: underline; }
 
-/* Laptop */
-@media (min-width: 1024px) {
-  .wrap { width: 880px; }
-  .grid { gap: 12px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
-  .card-item img { height: 190px; }
-  .card-body h3 { font-size: 15px; }
-  .meta { font-size: 12.5px; }
-  .price { font-size: 15px; }
-  .btn-sm { font-size: 12.5px; padding: 8px 12px; }
-}
+  .hero-card {
+    background: var(--card);
+    backdrop-filter: saturate(140%) blur(6px);
+    border: 1px solid #fff5f6;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(225,29,72,.18), 0 2px 10px rgba(0,0,0,.04);
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-/* Ultra-wide */
-@media (min-width: 1440px) {
-  .wrap { width: 820px; }
-}
-</style>
+  .hero-card h1 {
+    font-family: 'Lucida Calligraphy', 'Lucida Handwriting', cursive;
+    font-size: clamp(28px, 3vw, 36px);
+    margin: 0 0 6px;
+    background: linear-gradient(90deg, var(--accent), #ff4d7a);
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 
-    body {
-      padding: 20px;
-    }
+  .sub {
+    margin: 0 auto 10px;
+    max-width: 52ch;
+    color: #3b3b3b;
+    font-size: 14px;
+  }
 
-    .wrap {
-      width: min(95%, 1100px);
-      margin: 20px auto;
-    }
+  /* Product grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+  }
 
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
+  .card-item {
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(225,29,72,.12);
+    display: flex;
+    flex-direction: column;
+  }
 
-    .back-link {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 700;
-      letter-spacing: .02em;
-    }
-    .back-link:hover { text-decoration: underline; }
+  .card-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
 
-    .hero-card {
-      background: var(--card);
-      backdrop-filter: saturate(140%) blur(6px);
-      border: 1px solid #fff5f6;
-      border-radius: 24px;
-      box-shadow: 0 20px 60px rgba(225,29,72,.18), 0 2px 10px rgba(0,0,0,.04);
-      padding: 28px;
-      text-align: center;
-      margin-bottom: 20px;
-    }
+  .card-body {
+    padding: 12px;
+    display: grid;
+    gap: 6px;
+  }
 
-    .hero-card h1 {
-      /* h1 inherits Lucida Calligraphy + gradient from style.css */
-      margin: 0 0 6px;
-    }
+  .card-body h3 {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: .02em;
+  }
 
-    .sub {
-      margin: 0 auto 10px;
-      max-width: 60ch;
-      color: #3b3b3b;
-      font-size: 15px;
-    }
+  .meta {
+    margin: 0;
+    color: #666;
+    font-size: 13px;
+    line-height: 1.35;
+  }
 
-    /* Product grid */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-      gap: 18px;
-    }
+  .price {
+    font-weight: 800;
+    letter-spacing: .02em;
+    color: var(--accent);
+    font-size: 16px;
+  }
 
-    .card-item {
-      background: #fff;
-      border-radius: 18px;
-      overflow: hidden;
-      box-shadow: 0 14px 26px rgba(225,29,72,.12);
-      display: flex;
-      flex-direction: column;
-    }
+  .btn-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 2px;
+  }
 
-    .card-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-    }
+  .btn-sm {
+    padding: 9px 14px;
+    font-size: 13px;
+    box-shadow: 0 8px 18px rgba(225,29,72,.18);
+  }
 
-    .card-body {
-      padding: 14px;
-      display: grid;
-      gap: 8px;
-    }
+  footer {
+    text-align: center;
+    margin: 28px 0 10px;
+    color: #555;
+    font-size: 13px;
+  }
 
-    .card-body h3 {
-      margin: 0;
-      font-size: 18px;
-      letter-spacing: .02em;
-    }
+  /* Laptop & large screens */
+  @media (min-width: 1024px) {
+    .wrap { width: 880px; }
+    .grid { gap: 12px; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); }
+    .card-item img { height: 190px; }
+    .card-body h3 { font-size: 15px; }
+    .meta { font-size: 12.5px; }
+    .price { font-size: 15px; }
+    .btn-sm { font-size: 12.5px; padding: 8px 12px; }
+  }
 
-    .meta {
-      margin: 0;
-      color: #666;
-      font-size: 14px;
-      line-height: 1.35;
-    }
-
-    .price {
-      font-weight: 800;
-      letter-spacing: .02em;
-      color: var(--accent);
-    }
-
-    .btn-row {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-top: 2px;
-    }
-
-    .btn-sm {
-      padding: 10px 16px;
-      font-size: 14px;
-      box-shadow: 0 10px 20px rgba(225,29,72,.18), inset 0 -2px 0 rgba(0,0,0,.06);
-    }
-
-    footer {
-      text-align: center;
-      margin: 28px 0 10px;
-      color: #555;
-    }
-
-    @media (min-width: 900px) {
-      .card-item img { height: 260px; }
-    }
+  /* Extra-wide screens */
+  @media (min-width: 1440px) {
+    .wrap { width: 820px; }
+  }
   </style>
 </head>
 <body>
@@ -186,7 +155,7 @@
     </section>
 
     <section class="grid">
-      <!-- ITEM 1 -->
+      <!-- Example Items -->
       <article class="card-item">
         <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1200&auto=format&fit=crop" alt="Chic Blazer">
         <div class="card-body">
@@ -194,12 +163,11 @@
           <p class="meta">Excellent condition · Fully lined neutral tone</p>
           <div class="price">$120</div>
           <div class="btn-row">
-            <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.depop.com/hgs_preloved/">Enquire on Depop</a>
+            <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.depop.com/hgs_preloved/">View on Depop</a>
           </div>
         </div>
       </article>
 
-      <!-- ITEM 2 -->
       <article class="card-item">
         <img src="https://images.unsplash.com/photo-1520975922284-67d2dbe3e48c?q=80&w=1200&auto=format&fit=crop" alt="Silk Dress">
         <div class="card-body">
@@ -207,12 +175,11 @@
           <p class="meta">Bias-cut silk · Evening-perfect</p>
           <div class="price">$180</div>
           <div class="btn-row">
-            <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.depop.com/hgs_preloved/">Enquire on Depop</a>
+            <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.depop.com/hgs_preloved/">View on Depop</a>
           </div>
         </div>
       </article>
 
-      <!-- ITEM 3 -->
       <article class="card-item">
         <img src="https://images.unsplash.com/photo-1543662703-1e4f9ba11927?q=80&w=1200&auto=format&fit=crop" alt="Leather Bag">
         <div class="card-body">
@@ -220,46 +187,7 @@
           <p class="meta">Soft calf leather · Minimal wear</p>
           <div class="price">$220</div>
           <div class="btn-row">
-            <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.depop.com/hgs_preloved/">Enquire on Depop</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ITEM 4 -->
-      <article class="card-item">
-        <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?q=80&w=1200&auto=format&fit=crop" alt="Denim Jacket">
-        <div class="card-body">
-          <h3>Vintage Denim Jacket</h3>
-          <p class="meta">Classic cut · True vintage fade</p>
-          <div class="price">$95</div>
-          <div class="btn-row">
-            <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.depop.com/hgs_preloved/">Enquire on Depop</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ITEM 5 -->
-      <article class="card-item">
-        <img src="https://images.unsplash.com/photo-1560067174-e553b3642b2b?q=80&w=1200&auto=format&fit=crop" alt="Statement Heels">
-        <div class="card-body">
-          <h3>Statement Heels</h3>
-          <p class="meta">Elegant blush tone · Like new</p>
-          <div class="price">$110</div>
-          <div class="btn-row">
-            <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.depop.com/hgs_preloved/">Enquire on Depop</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- ITEM 6 -->
-      <article class="card-item">
-        <img src="https://images.unsplash.com/photo-1518544801958-efcbf8a7ec10?q=80&w=1200&auto=format&fit=crop" alt="Designer Handbag">
-        <div class="card-body">
-          <h3>Designer Handbag</h3>
-          <p class="meta">Gold hardware · Gently used</p>
-          <div class="price">$260</div>
-          <div class="btn-row">
-            <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.depop.com/hgs_preloved/">Enquire on Depop</a>
+            <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.depop.com/hgs_preloved/">View on Depop</a>
           </div>
         </div>
       </article>
