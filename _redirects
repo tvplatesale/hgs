@@ -1,9 +1,0 @@
-# Redirect all www to non-www
-https://www.hgspreloved.com/* https://hgspreloved.com/:splat 301!
-
-# Redirect all HTTP to HTTPS
-http://hgspreloved.com/* https://hgspreloved.com/:splat 301!
-
-# Redirect your old Netlify subdomain to your main domain
-https://lovely-smakager-a73ae8.netlify.app/* https://hgspreloved.com/:splat 301!
-http://lovely-smakager-a73ae8.netlify.app/* https://hgspreloved.com/:splat 301!
