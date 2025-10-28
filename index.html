@@ -1,236 +1,123 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HGS Preloved — Designer & Vintage Fashion</title>
-
-  <!-- Brand -->
+  <title>HGS Preloved</title>
   <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
   <link rel="icon" href="assets/favicon-192.png" sizes="192x192" />
-  <link rel="apple-touch-icon" href="assets/favicon-192.png" />
-
-  <!-- SEO / Social -->
-  <meta name="description" content="HGS Preloved — luxury designer & vintage fashion from Adelaide. That’s straight up hot girl sh!t!" />
-  <meta property="og:title" content="HGS Preloved" />
-  <meta property="og:description" content="Luxury preloved fashion, sustainably sourced in Adelaide, SA." />
-  <meta property="og:image" content="assets/og-image.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-domain.example/" />
-  <meta name="twitter:card" content="summary_large_image" />
-
   <style>
     :root{
-      --bg:#fde7ea;         /* baby pink */
-      --ink:#151515;        /* ink */
-      --accent:#e11d48;     /* raspberry */
-      --ink-soft:#4a4a4a;
-      --card:#ffffffd9;     /* glassy white */
-      --ring:#ffd7e0;
-      --pill:#fff5f7;
-      --radius:28px;
+      --bg:#fde7ea;
+      --ink:#1a1a1a;
+      --accent:#e11d48;
+      --card:#ffffffcc;
     }
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       color:var(--ink);
-      background:
-        radial-gradient(1200px 800px at 50% -120px, #ffeef1 10%, var(--bg) 65%) fixed;
-      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+      background: radial-gradient(1200px 800px at 50% -100px, #ffeef1 10%, var(--bg) 65%) fixed;
+      display:flex; align-items:center; justify-content:center;
+      padding:32px;
     }
-
-    .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 64px}
-
-    /* Top bar */
-    .top{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:8px 12px; margin-bottom:20px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:12px; text-decoration:none; color:inherit;
-    }
-    .brand img{
-      width:48px;height:48px;border-radius:14px; object-fit:cover;
-      border:3px solid #fff; box-shadow:0 6px 18px rgba(225,29,72,.16);
-    }
-    .brand strong{font-size:18px;letter-spacing:.02em}
-
-    .nav{
-      display:flex; gap:10px; flex-wrap:wrap;
-    }
-    .pill{
-      padding:8px 12px; border-radius:999px; background:var(--pill);
-      border:1px solid var(--ring); font-size:14px; color:var(--accent); text-decoration:none;
-    }
-    .pill:hover{filter:saturate(115%)}
-
-    /* Hero card */
     .card{
-      position:relative;
-      display:grid; grid-template-columns: 1fr 1.1fr; gap:26px;
-      background:var(--card); backdrop-filter:saturate(140%) blur(8px);
-      border:1px solid #fff5f6; border-radius:var(--radius);
-      box-shadow: 0 22px 60px rgba(225,29,72,.20), 0 3px 10px rgba(0,0,0,.05);
-      padding:38px; overflow:hidden;
-    }
-    @media (max-width: 880px){ .card{grid-template-columns:1fr; padding:28px} }
-
-    .hero-kicker{
-      display:inline-flex; align-items:center; gap:8px;
-      padding:8px 12px; border-radius:999px;
-      background:#fff; border:1px dashed var(--ring); color:var(--accent);
-      font-weight:600; font-size:13px;
-      box-shadow:0 6px 18px rgba(225,29,72,.12);
-    }
-    h1{
-      font-size: clamp(34px, 6vw, 56px);
-      line-height:1.02; margin:14px 0 8px; letter-spacing:.01em;
-    }
-    .tagline{
-      font-size: clamp(16px, 2.2vw, 20px);
-      color:var(--ink-soft); margin:0 0 22px;
-    }
-
-    .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin:8px 0 6px}
-    .btn{
-      appearance:none; border:none; cursor:pointer; text-decoration:none;
-      display:inline-flex; align-items:center; justify-content:center; gap:10px;
-      padding:16px 26px; border-radius:999px; font-weight:800; letter-spacing:.02em;
-      color:#fff; background:linear-gradient(180deg, #ff4d7a, var(--accent));
-      box-shadow: 0 14px 30px rgba(225,29,72,.35), inset 0 -2px 0 rgba(0,0,0,.08);
-      transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
-    }
-    .btn:hover{ filter:saturate(115%); box-shadow: 0 18px 36px rgba(225,29,72,.42), inset 0 -2px 0 rgba(0,0,0,.1); }
-    .btn:active{ transform: translateY(1px) scale(.99); }
-    .btn-secondary{
-      background:#fff; color:var(--accent);
-      border:2px solid var(--accent); box-shadow:none;
-    }
-    .btn-secondary:hover{ background:var(--accent); color:#fff; box-shadow:0 8px 20px rgba(225,29,72,.3); }
-
-    /* Right visual */
-    .hero-visual{
-      display:grid; place-items:center;
-      padding:12px; position:relative;
+      width:min(680px, 100%);
+      background:var(--card);
+      backdrop-filter:saturate(140%) blur(6px);
+      border:1px solid #fff5f6;
+      box-shadow: 0 20px 60px rgba(225,29,72,.18), 0 2px 10px rgba(0,0,0,.04);
+      border-radius:28px;
+      padding:40px 28px 28px;
+      text-align:center;
     }
     .logo{
-      width:min(360px, 100%); aspect-ratio:1; border-radius:24px;
-      border:8px solid #fff; object-fit:cover; background:#fff;
-      box-shadow: 0 16px 44px rgba(225,29,72,.22);
-      transform: translateY(0); animation: float 8s ease-in-out infinite;
+      width:170px; height:170px;
+      border-radius:24px;
+      border:6px solid #fff;
+      box-shadow: 0 10px 30px rgba(225,29,72,.15);
+      object-fit:cover; background:#fff;
+      margin:-100px auto 12px; display:block;
     }
-    @keyframes float{
-      0%,100%{ transform: translateY(0) }
-      50%{ transform: translateY(-8px) }
+    h1{
+      font-size: clamp(28px, 4vw, 44px);
+      letter-spacing:.02em;
+      margin:10px 0 8px;
+      
+      <p class="tagline hero">
+  HGS is all about confidence, rebellion, and unapologetic self-expression. 
+  We celebrate the girls who break the rules, chase the thrill, and look damn good doing it.
+</p>
     }
-
-    /* Social proof / features strip */
-    .strip{
-      display:grid; grid-template-columns: repeat(3,1fr); gap:14px;
-      margin-top:18px;
+    .btn{
+      appearance:none; border:none;
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:10px;
+      padding:16px 26px;
+      font-size:18px; font-weight:700; letter-spacing:.02em;
+      color:#fff; background:linear-gradient(180deg, #ff4d7a, var(--accent));
+      border-radius:999px;
+      box-shadow: 0 14px 30px rgba(225,29,72,.35), inset 0 -2px 0 rgba(0,0,0,.08);
+      cursor:pointer; text-decoration:none;
+      transition: transform .08s ease, box-shadow .2s ease, filter .2s ease;
     }
-    @media (max-width: 680px){ .strip{grid-template-columns:1fr;}}
-    .chip{
-      display:flex; align-items:center; gap:10px;
-      padding:12px 14px; border-radius:16px; background:#fff;
-      border:1px solid #ffe5eb; box-shadow:0 6px 16px rgba(225,29,72,.08);
-      font-size:14px; color:#333;
+    .btn:active{ transform: translateY(1px) scale(.99); }
+    .btn:hover{ filter:saturate(115%); box-shadow: 0 18px 36px rgba(225,29,72,.42), inset 0 -2px 0 rgba(0,0,0,.1); }
+    .btn-secondary{
+      background:#fff;
+      color:var(--accent);
+      border:2px solid var(--accent);
+      box-shadow:none;
+      margin-top:10px;
     }
-    .chip svg{flex:0 0 auto}
-
+    .btn-secondary:hover{
+      background:var(--accent);
+      color:#fff;
+      box-shadow:0 8px 20px rgba(225,29,72,.3);
+    }
     footer{
-      margin-top:26px; padding-top:18px; border-top:1px dashed #f4c8d2;
-      font-size:14px; opacity:.95; text-align:center;
+      margin-top:28px; padding-top:18px; border-top:1px dashed #f4c8d2;
+      font-size:14px; opacity:.9;
     }
     a.link{ color:var(--accent); text-underline-offset:3px; text-decoration:none;}
     a.link:hover{text-decoration:underline;}
   </style>
-
-  <!-- Schema (helps Google/FB understand the brand) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"HGS Preloved",
-    "url":"https://your-domain.example/",
-    "logo":"https://your-domain.example/assets/logo.png",
-    "sameAs":["https://m.facebook.com/61576192851092/"],
-    "description":"Luxury designer & vintage preloved fashion from Adelaide, SA."
-  }
-  </script>
 </head>
 <body>
-  <div class="wrap">
-    <header class="top" aria-label="Site header">
-      <a class="brand" href="/">
-        <img src="assets/logo.png" alt="HGS Preloved logo" width="48" height="48" />
-        <strong>HGS Preloved</strong>
-      </a>
-      <nav class="nav" aria-label="Quick links">
-        <a class="pill" href="/catalogue.html">Catalogue</a>
-        <a class="pill" href="mailto:hgs.preloved@gmail.com">Contact</a>
-        <a class="pill" href="https://m.facebook.com/61576192851092/" target="_blank" rel="noopener">Facebook</a>
-      </nav>
-    </header>
+  <main class="card">
+    <img class="logo" src="assets/logo.png" alt="HGS Preloved logo" width="170" height="170" />
+    <h1>HGS Preloved</h1>
+    <p class="tagline">Luxury preloved fashion, sustainably sourced from Adelaide, SA.</p>
 
-    <main class="card">
-      <section>
-        <span class="hero-kicker">Adelaide • Preloved Designer & Vintage</span>
-        <h1>Luxury preloved fashion with attitude</h1>
-        <p class="tagline">
-          “That’s straight up hot girl sh!t!” — curated drops, one-of-a-kind pieces, and sustainable style.
-        </p>
-        <div class="cta-row">
-          <a
-            class="btn"
-            href="https://m.facebook.com/61576192851092/"
-            target="_blank" rel="noopener"
-            aria-label="Shop HGS Preloved on Facebook"
-          >
-            Shop the Collection
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M7 17L17 7M17 7H9M17 7v8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
+    <!-- ✅ Facebook link -->
+    <a
+      class="btn"
+      href="https://m.facebook.com/61576192851092/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Open HGS Preloved on Facebook"
+    >
+      Shop the Collection
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M7 17L17 7M17 7H9M17 7v8" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </a>
 
-          <a class="btn btn-secondary" href="/catalogue.html" aria-label="View the HGS product catalogue">
-            View Catalogue
-          </a>
-        </div>
-
-        <div class="strip" aria-label="Highlights">
-          <div class="chip">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 2l3 7h7l-5.5 4.2L18 21l-6-3.8L6 21l1.5-7.8L2 9h7l3-7z" stroke="#e11d48" stroke-width="1.6" stroke-linejoin="round"/>
-            </svg>
-            Authentic designer & rare vintage
-          </div>
-          <div class="chip">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 7h16M4 12h16M4 17h10" stroke="#e11d48" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-            New drops weekly — limited pieces
-          </div>
-          <div class="chip">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M4 12a8 8 0 1016 0A8 8 0 004 12zm8-5v5l3 3" stroke="#e11d48" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            Local pickup & fast post
-          </div>
-        </div>
-      </section>
-
-      <aside class="hero-visual">
-        <img class="logo" src="assets/logo.png" alt="HGS Preloved lips logo" />
-      </aside>
-    </main>
+    <!-- ✅ View Catalogue button -->
+    <a
+      class="btn btn-secondary"
+      href="/catalogue.html"
+      aria-label="View the HGS product catalogue"
+    >
+      View Catalogue
+    </a>
 
     <footer>
-      Contact: <a class="link" href="mailto:hgs.preloved@gmail.com">hgs.preloved@gmail.com</a> ·
+      Contact us: <a class="link" href="mailto:hgs.preloved@gmail.com">hgs.preloved@gmail.com</a><br>
       Follow us on <a class="link" href="https://m.facebook.com/61576192851092/" target="_blank" rel="noopener">Facebook</a>
     </footer>
-  </div>
+  </main>
 </body>
 </html>
