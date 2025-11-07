@@ -2,38 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>HGS Preloved</title>
-  <link rel="icon" href="assets/favicon-32.png" sizes="32x32" />
-  <link rel="icon" href="assets/favicon-192.png" sizes="192x192" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HGS Preloved — curated designer resale with edge.">
+  <title>HGS Preloved — Hot Girl Sh!t</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
 </head>
 <body>
-  <main class="card">
-    <img class="logo" src="assets/logo.png" alt="HGS Preloved logo" />
-    <h1 class="stacked">
-  <span class="hgs">HGS</span><br>
-  <span class="preloved">Preloved</span>
-</h1>
+  <header class="site-header">
+    <nav class="nav">
+      <a href="#about">ABOUT</a>
+      <img src="/assets/logo-smoking-lips.png" alt="HGS Preloved Logo" class="logo" />
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
 
+  <main class="main">
+    <section class="hero">
+      <h1 class="brand-title">HGS <span>PRELOVED</span></h1>
+      <p class="tagline">Hot Girl Sh!t</p>
+      <p class="subtext">Preloved designer pieces with attitude. New drops weekly.</p>
+      <a href="https://www.depop.com/hgs_preloved/" target="_blank" rel="noopener" class="btn">Shop on Depop</a>
+    </section>
 
-    <!-- 🖤 Hero tagline -->
-    <p class="tagline hero">
-      HGS Preloved — short for Hot Girl Sh!t — is a personal project born from my love of fashion with history.
-      I handpick vintage and designer pieces that deserve a second life, focusing on timeless style, quality, and sustainable fashion.
-      Each item is chosen with care and made to be loved again. 💋
-    </p>
+    <section id="about" class="about">
+      <h2>ABOUT</h2>
+      <p>HGS Preloved — short for Hot Girl Sh!t — is a personal project born from my love of fashion and the thrill of finding hidden gems and one-off statement pieces. I handpick vintage and designer treasures that deserve a second life, focusing on timeless style, quality, and sustainable fashion.</p>
+      <p>Each item is chosen with care and made to be loved again. ❤️</p>
+    </section>
 
-<!-- 🛍️ Single Shop button -->
-<a class="btn" href="https://www.depop.com/hgs_preloved/" target="_blank" rel="noopener noreferrer">
-  Shop Now
-</a>
+    <section id="contact" class="contact">
+      <h2>CONTACT</h2>
+      <form action="#" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
 
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
 
-    <footer>
-      Contact us: <a class="link" href="mailto:hgs.preloved@gmail.com">hgs.preloved@gmail.com</a><br>
-      Follow us on <a class="link" href="https://www.depop.com/hgs_preloved/" target="_blank" rel="noopener">Depop</a>
-    </footer>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn">Send</button>
+      </form>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <p>© 2025 HGS Preloved. All rights reserved.</p>
+  </footer>
 </body>
 </html>
