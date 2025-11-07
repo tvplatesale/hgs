@@ -6,59 +6,69 @@
   --white: #fff;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-body {
+html, body {
   margin: 0;
   padding: 0;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   background: var(--bg) url("/assets/logo-wallpaper.png") center/cover no-repeat;
-  font-family: "Helvetica Neue", Arial, sans-serif;
   color: var(--text);
-  line-height: 1.6;
+  min-height: 100%;
 }
 
-.logo {
-  height: 48px;
+.site-header {
+  background: rgba(255,255,255,0.85);
+  padding: 0;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.9);
+  padding: 24px 18px 16px 18px;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
-.nav a {
-  text-decoration: none;
-  color: var(--text);
-  font-weight: bold;
-  padding: 8px 12px;
+.logo {
+  height: 48px;
+  width: auto;
+  margin: 0 14px;
 }
 
-.main {
+.logo-large {
+  margin-top: 24px;
+  margin-bottom: 10px;
+  width: 90px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero {
   text-align: center;
-  padding: 40px 20px;
+  padding: 24px 8px 18px 8px;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.2em;
+  font-size: 2.8rem;
+  font-family: inherit;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.5px;
 }
 
-.brand-title span {
+.preloved {
   display: block;
-  font-size: 1.2rem;
-  letter-spacing: 2px;
   color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 1.6px;
 }
 
 .tagline {
-  font-size: 1.5rem;
-  font-weight: 500;
-  margin-bottom: 0.2em;
+  font-size: 1.28rem;
+  font-weight: 600;
+  margin: 10px 0 2px 0;
 }
 
 .subtext {
@@ -69,47 +79,69 @@ body {
 .btn {
   background: var(--accent);
   color: var(--white);
-  padding: 12px 24px;
   border: none;
-  border-radius: 24px;
-  font-weight: bold;
+  border-radius: 999px;
+  font-weight: 700;
+  padding: 14px 34px;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background 0.15s;
+  margin: 18px 0 0 0;
   text-decoration: none;
   display: inline-block;
-  transition: background 0.2s ease;
 }
 
 .btn:hover {
-  background: #b01635;
+  background: #c61736;
 }
 
 .about, .contact {
   background: var(--white);
-  margin: 40px auto;
-  padding: 24px;
-  max-width: 700px;
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-  text-align: left;
+  margin: 30px auto 0 auto;
+  padding: 24px 18px;
+  max-width: 680px;
+  border-radius: 13px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+}
+
+.about h2, .contact h2 {
+  letter-spacing: 2.5px;
+  margin-top: 0;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.contact-form label {
+  font-size: 1.03rem;
+  font-weight: 500;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 12px;
+  padding: 11px 10px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1.2px solid #e4d1d1;
   border-radius: 6px;
-  width: 100%;
+  background: #fff;
+  color: #222;
 }
 
 .site-footer {
   text-align: center;
-  padding: 20px 10px;
-  font-size: 0.85rem;
-  color: #777;
+  padding: 22px 10px 34px 10px;
+  font-size: 0.94rem;
+  color: #8e8e8e;
+  margin-top: 36px;
+}
+
+@media (max-width: 600px) {
+  .main, .about, .contact { padding-left: 2vw; padding-right: 2vw; }
+  .nav { padding: 18px 6vw 12px 6vw; }
+  .logo-large { width: 70px; }
+  .hero h1 { font-size: 2.0rem; }
 }
