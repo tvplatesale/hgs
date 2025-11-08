@@ -33,7 +33,7 @@ body {
 }
 
 .logo {
-  height: 36px;
+  height: 72px;
 }
 
 .hero {
@@ -42,9 +42,9 @@ body {
 }
 
 .logo-large {
-  width: 70px;
+  width: 210px;
   height: auto;
-  margin-bottom: 12px;
+  margin-bottom: 36px;
 }
 
 .hero h1 {
