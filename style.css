@@ -1,179 +1,120 @@
-:root {
-  --bg: #fff4f4;
-  --text: #000;
-  --accent: #d52c3f;
-  --white: #fff;
-  --muted: #444;
-}
-
-* {
-  box-sizing: border-box;
-}
-
+/* ===== BACKGROUND ===== */
 body {
   margin: 0;
   padding: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg) url("/assets/logo-wallpaper.png") center/cover no-repeat fixed;
-  color: var(--text);
-}
-
-.site-header {
-  background: rgba(255, 255, 255, 0.85);
-  padding: 12px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav a {
-  color: #0000ee;
-  text-decoration: underline;
-  font-weight: bold;
-}:root {
-  --bg: #fff4f4;
-  --text: #000;
-  --accent: #d52c3f;
-  --white: #fff;
-  --muted: #444;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: var(--bg) url("/assets/logo-wallpaper.png") center/cover no-repeat fixed;
-  color: var(--text);
-}
-
-.hero {
+  font-family: "Georgia", serif;
+  background-color: #f8d7c7;
+  background-image: url('background-brands.png');
+  background-repeat: repeat;
+  background-size: contain;
+  background-position: center;
+  color: #601d1c;
   text-align: center;
-  padding: 100px 16px 40px;
+  overflow-x: hidden;
 }
 
-.hero-logo-only {
-  width: 160px;
-  height: auto;
-  margin-bottom: 24px;
+/* Add a subtle overlay for readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 245, 240, 0.5);
+  z-index: -1;
 }
 
-.btn {
-  background: var(--accent);
-  color: var(--white);
-  padding: 14px 30px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 999px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.btn:hover {
-  background: #b22035;
-}
-
-.about {
-  background: var(--white);
-  max-width: 680px;
-  margin: 40px auto;
-  padding: 24px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-}
-
-.about h2 {
-  margin-top: 0;
-  letter-spacing: 2px;
-}
-
-.site-footer {
-  text-align: center;
-  padding: 24px 10px 40px;
-  font-size: 0.9rem;
-  color: #777;
-}
-
+/* ===== LOGO ===== */
 .logo {
-  height: 36px;
-}
-
-.hero {
+  margin-top: 60px;
   text-align: center;
-  padding: 40px 16px 30px;
 }
 
-.logo-large {
-  width: 70px;
+.logo img {
+  width: 120px;
   height: auto;
-  margin-bottom: 12px;
-}
-
-.hero h1 {
-  font-size: 2.6rem;
-  margin: 0;
-  font-weight: 700;
-}
-
-.preloved {
   display: block;
-  color: var(--accent);
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  margin-top: -6px;
+  margin: 0 auto 15px auto;
 }
 
-.tagline {
-  font-size: 1.2rem;
-  font-weight: 500;
-  margin-top: 10px;
+/* ===== HEADINGS ===== */
+h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 0;
+  color: #b10000;
 }
 
-.subtext {
-  color: var(--muted);
+h2 {
   font-size: 1rem;
-  margin: 12px 0 24px;
+  color: #b63c2e;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 5px;
 }
 
+/* ===== BUTTON ===== */
 .btn {
-  background: var(--accent);
-  color: var(--white);
-  padding: 14px 30px;
-  font-size: 1rem;
-  font-weight: bold;
+  background-color: #d93025;
+  color: #fff;
   border: none;
-  border-radius: 999px;
-  text-decoration: none;
+  border-radius: 40px;
+  padding: 14px 40px;
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.3s ease-in-out;
+  margin-top: 25px;
 }
 
 .btn:hover {
-  background: #b22035;
+  background-color: #a3211a;
+  transform: scale(1.05);
 }
 
-.about {
-  background: var(--white);
-  max-width: 680px;
-  margin: 40px auto;
-  padding: 24px;
-  border-radius: 10px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+/* ===== CONTACT FORM ===== */
+.contact {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 16px;
+  padding: 30px;
+  margin-top: 60px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.about h2 {
-  margin-top: 0;
-  letter-spacing: 2px;
+input, textarea {
+  width: 90%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: inherit;
 }
 
-.site-footer {
-  text-align: center;
-  padding: 24px 10px 40px;
-  font-size: 0.9rem;
-  color: #777;
+textarea {
+  height: 100px;
+  resize: none;
+}
+
+button[type="submit"] {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #333;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  h1 { font-size: 2.3rem; }
+  .btn { padding: 12px 30px; font-size: 1rem; }
 }
