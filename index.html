@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HGS Preloved | Hot Girl Sh!t Preloved Fashion</title>
   <style>
-    /* Global */
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       padding: 0;
@@ -20,14 +17,14 @@
       position: relative;
     }
 
-    /* Background layer */
+    /* Background */
     .brand-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url('background-brands.png'); /* Your transparent brand collage */
+      background-image: url('images/assets/logo-wallpaper.PNG');
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -35,16 +32,13 @@
       z-index: -1;
     }
 
-    /* Main layout */
     .container {
       max-width: 750px;
       margin: 0 auto;
       padding: 60px 20px;
     }
 
-    .logo {
-      margin-top: 40px;
-    }
+    .logo { margin-top: 40px; }
 
     .logo img {
       width: 120px;
@@ -68,12 +62,8 @@
       margin-bottom: 40px;
     }
 
-    p {
-      line-height: 1.6;
-      font-size: 1.05rem;
-    }
+    p { line-height: 1.6; font-size: 1.05rem; }
 
-    /* Button */
     .btn {
       background-color: #d93025;
       color: #fff;
@@ -86,12 +76,8 @@
       margin: 25px 0;
       transition: all 0.3s ease-in-out;
     }
-    .btn:hover {
-      background-color: #a3211a;
-      transform: scale(1.05);
-    }
+    .btn:hover { background-color: #a3211a; transform: scale(1.05); }
 
-    /* Contact Form */
     .contact {
       background-color: rgba(255, 255, 255, 0.7);
       border-radius: 16px;
@@ -101,9 +87,7 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .contact h3 {
-      margin-bottom: 20px;
-    }
+
     input, textarea {
       width: 90%;
       padding: 10px;
@@ -112,10 +96,9 @@
       border-radius: 5px;
       font-family: inherit;
     }
-    textarea {
-      height: 100px;
-      resize: none;
-    }
+
+    textarea { height: 100px; resize: none; }
+
     button[type="submit"] {
       background-color: #000;
       color: #fff;
@@ -126,9 +109,7 @@
       font-weight: bold;
       transition: 0.3s;
     }
-    button[type="submit"]:hover {
-      background-color: #333;
-    }
+    button[type="submit"]:hover { background-color: #333; }
 
     footer {
       font-size: 0.85rem;
@@ -136,7 +117,6 @@
       margin: 40px 0 20px 0;
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       h1 { font-size: 2.3rem; }
       .btn { padding: 12px 30px; font-size: 1rem; }
@@ -146,13 +126,11 @@
 </head>
 
 <body>
-  <!-- Background Layer -->
   <div class="brand-bg"></div>
 
-  <!-- Main Container -->
   <div class="container">
     <div class="logo">
-      <img src="logo-lips.png" alt="HGS Preloved Logo"> <!-- Your red lips logo -->
+      <img src="images/assets/logo-smoking-lips.PNG" alt="HGS Preloved Logo">
       <h1>HGS PRELOVED</h1>
       <h2>Hot Girl Sh!t Preloved</h2>
     </div>
