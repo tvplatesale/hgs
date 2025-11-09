@@ -1,0 +1,7 @@
+hgs-preloved/
+├── index.html
+├── styles/
+│   └── style.css
+├── images/
+│   └── hgs-final-web-page.png   # Your uploaded image
+└── README.md
