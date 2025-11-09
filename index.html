@@ -1,57 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HGS Preloved | Hot Girl Sh!t Preloved Fashion</title>
   <style>
+    /* Global */
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
+      padding: 0;
       font-family: "Georgia", serif;
-      background-color: #f7d7c5;
+      background-color: #f8d7c7;
       color: #601d1c;
       text-align: center;
-      background-image: url('background.png');
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Background layer */
+    .brand-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('background-brands.png'); /* Your transparent brand collage */
       background-size: cover;
       background-repeat: no-repeat;
-      background-attachment: fixed;
+      background-position: center;
+      opacity: 0.2;
+      z-index: -1;
     }
 
-    h1 {
-      font-size: 4rem;
-      letter-spacing: 2px;
-      margin-bottom: 0;
-    }
-
-    h2 {
-      font-size: 1rem;
-      letter-spacing: 3px;
-      font-weight: 700;
-      color: #b63c2e;
-      margin-top: 0;
+    /* Main layout */
+    .container {
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 60px 20px;
     }
 
     .logo {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin-top: 80px;
+      margin-top: 40px;
     }
 
     .logo img {
       width: 120px;
-      margin-bottom: 20px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto;
     }
 
-    .content {
-      max-width: 650px;
-      margin: 0 auto;
-      line-height: 1.6;
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+      letter-spacing: 2px;
+      color: #b10000;
+    }
+
+    h2 {
       font-size: 1rem;
-      padding: 20px;
+      color: #b63c2e;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: 40px;
     }
 
+    p {
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    /* Button */
     .btn {
       background-color: #d93025;
       color: #fff;
@@ -61,31 +83,39 @@
       font-size: 1.1rem;
       font-weight: bold;
       cursor: pointer;
-      transition: 0.3s ease-in-out;
+      margin: 25px 0;
+      transition: all 0.3s ease-in-out;
     }
-
     .btn:hover {
       background-color: #a3211a;
       transform: scale(1.05);
     }
 
+    /* Contact Form */
     .contact {
-      background-color: rgba(255, 255, 255, 0.6);
-      margin: 50px auto;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 16px;
       padding: 30px;
-      border-radius: 12px;
+      margin-top: 60px;
       max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
     }
-
+    .contact h3 {
+      margin-bottom: 20px;
+    }
     input, textarea {
       width: 90%;
       padding: 10px;
-      margin: 10px 0;
+      margin: 8px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
       font-family: inherit;
     }
-
+    textarea {
+      height: 100px;
+      resize: none;
+    }
     button[type="submit"] {
       background-color: #000;
       color: #fff;
@@ -96,44 +126,54 @@
       font-weight: bold;
       transition: 0.3s;
     }
-
     button[type="submit"]:hover {
       background-color: #333;
     }
 
     footer {
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: #704c4b;
-      margin-bottom: 20px;
+      margin: 40px 0 20px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      h1 { font-size: 2.3rem; }
+      .btn { padding: 12px 30px; font-size: 1rem; }
+      .container { padding: 30px 15px; }
     }
   </style>
 </head>
 
 <body>
-  <div class="logo">
-    <img src="https://raw.githubusercontent.com/yourusername/hgs-preloved/main/logo.png" alt="HGS Preloved Logo" />
-    <h1>HGS PRELOVED</h1>
-    <h2>Hot Girl Sh!t Preloved</h2>
-  </div>
+  <!-- Background Layer -->
+  <div class="brand-bg"></div>
 
-  <div class="content">
+  <!-- Main Container -->
+  <div class="container">
+    <div class="logo">
+      <img src="logo-lips.png" alt="HGS Preloved Logo"> <!-- Your red lips logo -->
+      <h1>HGS PRELOVED</h1>
+      <h2>Hot Girl Sh!t Preloved</h2>
+    </div>
+
     <p><strong>HGS Preloved</strong> – short for <em>Hot Girl Sh!t</em> – is a personal project born from my love of fashion and the thrill of finding gems and one-off statement pieces. I handpick vintage and designer treasures that deserve a second life, focusing on in and everlasting fashion.</p>
 
-    <p>From designer icons to rare vintage finds, each item is carefully chosen for its individuality and charm – its purpose; to bring out the inner hot girl in you.</p>
+    <p>From designer icons to rare vintage finds, each item is carefully chosen for its individuality and charm – its purpose: to bring out the inner hot girl in you.</p>
 
     <button class="btn" onclick="window.location.href='https://yourshoplink.com'">Shop Now</button>
-  </div>
 
-  <div class="contact">
-    <h3>Contact</h3>
-    <form action="https://formsubmit.co/your@email.com" method="POST">
-      <input type="text" name="name" placeholder="Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <textarea name="message" placeholder="Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
+    <div class="contact">
+      <h3>Contact</h3>
+      <form action="https://formsubmit.co/your@email.com" method="POST">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
 
-  <footer>© 2025 HGS Preloved – All Rights Reserved</footer>
+    <footer>© 2025 HGS Preloved – All Rights Reserved</footer>
+  </div>
 </body>
 </html>
