@@ -56,7 +56,7 @@ body{
   padding-block:min(5vh,28px);
 }
 .hero-logo{
-  /* +50% scale: min 240px, mid 39vh, max 540px */
+  /* +70% scale: min 240px, mid 39vh, max 540px */
   width:clamp(240px, 39vh, 540px);
   height:auto;
   display:block;
