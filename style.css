@@ -20,7 +20,7 @@ body{
   /* Wallpaper + pink overlay */
   background-image:
     linear-gradient(var(--pink), var(--pink)),
-    url("/assets/logo-wallpaper.png");
+    url("/assets/hgs-preloved-classy-background.png");
   background-blend-mode:multiply;
   background-size:cover;
   background-position:center;
