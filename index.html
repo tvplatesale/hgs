@@ -1,31 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HGS Preloved</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HGS Preloved — Hot Girl Sh!t</title>
+  <meta name="description" content="HGS Preloved — curated vintage and designer resale. Minimal, fast, photo-first." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32.png" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32" />
 </head>
 <body>
-  <main>
-    <section class="hero">
-      <img src="/assets/logo-smoking-lips.png" alt="HGS Preloved Logo" class="hero-logo-only" />
-      <a href="https://www.depop.com/hgs_preloved/" target="_blank" class="btn">Shop on Depop</a>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main">
+    <!-- HERO: large lips logo centered over single CTA -->
+    <section class="hero" aria-label="Hero">
+      <img
+        class="hero-logo"
+        src="/assets/logo-smoking-lips.png"
+        alt="HGS Preloved mark"
+        width="320"
+        height="320"
+        decoding="async"
+      />
+      <a
+        class="btn"
+        href="https://www.depop.com/hgs_preloved/"
+        target="_blank"
+        rel="noopener"
+      >Shop on Depop</a>
     </section>
 
-    <section id="about" class="about">
-      <h2>ABOUT</h2>
+    <!-- ABOUT + CONTACT (form centered under paragraph) -->
+    <section id="about" class="section card" aria-labelledby="about-title">
+      <h2 id="about-title">About</h2>
       <p>
-        HGS Preloved — short for <em>Hot Girl Sh!t</em> — is a personal project born from my love of fashion and the thrill of finding hidden gems and one-off statement pieces.
-        I handpick vintage and designer treasures that deserve a second life, focusing on timeless style, quality, and sustainable fashion.
+        HGS Preloved — short for Hot Girl Sh!t — is a personal project born from my love of fashion with history.
+        I handpick vintage and designer pieces that deserve a second life, focusing on timeless style, quality, and sustainable fashion.
+        Each item is chosen with care and made to be loved again. 💋
       </p>
-      <p>Each item is chosen with care and made to be loved again. ❤️</p>
+
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="form" aria-label="Contact form">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hidden"><label>Don’t fill this out: <input name="bot-field" /></label></p>
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit" class="btn btn-secondary">Send</button>
+      </form>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>© 2025 HGS Preloved. All rights reserved.</p>
+    <small>© 2025 HGS Preloved. All rights reserved.</small>
   </footer>
 </body>
 </html>
