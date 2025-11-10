@@ -208,3 +208,53 @@ input:focus-visible, textarea:focus-visible{
 
 /* Keep form centered under the paragraph */
 #about .form{ margin-top: 18px; }
+/* CRISP TEXT ON TRANSPARENT ABOUT */
+#about.card::before{ content:none !important; }          /* remove scrim/blur */
+#about{ 
+  -webkit-font-smoothing: auto; 
+  -moz-osx-font-smoothing: auto; 
+  text-rendering: optimizeSpeed; 
+}
+
+#about h2{
+  color:#0e0e0e;
+  font-weight:800;
+  letter-spacing:1.6px;
+  text-shadow:none;
+  -webkit-text-stroke:0;
+}
+
+#about p{
+  color:#111;
+  font-weight:500;
+  line-height:1.55;
+  max-width:66ch;
+  margin-inline:auto;
+  text-shadow:none;
+  filter:none;
+}
+
+@media (max-width:600px){
+  #about p{ font-size:1.02rem; }
+}
+
+/* TRANSPARENT “GHOST” INPUTS WITH HIGH CONTRAST */
+.form input,
+.form textarea{
+  background:transparent;
+  border:1.6px solid rgba(0,0,0,.78);
+  color:#111;
+  box-shadow:none;
+}
+
+.form input::placeholder,
+.form textarea::placeholder{
+  color:rgba(0,0,0,.55);
+}
+
+.form input:focus-visible,
+.form textarea:focus-visible{
+  outline:2px solid #000;
+  outline-offset:2px;
+  border-color:#000;
+}
