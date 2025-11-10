@@ -13,8 +13,8 @@
   --shadow:0 10px 26px rgba(0,0,0,.07);
 
   /* New controls */
-  --scrim-alpha: .01;   /* lower = less white */
-  --pink-alpha:  .98;   /* higher = more pink */
+  --scrim-alpha: .55;   /* lower = less white */
+  --pink-alpha:  .98;   /* higher = more pink */70
 }
 }
 
