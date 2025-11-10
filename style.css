@@ -13,8 +13,8 @@
   --shadow:0 10px 26px rgba(0,0,0,.07);
 
   /* New controls */
-  --scrim-alpha:.100;  /* fade wallpaper strength */
-  --pink-alpha:.40;   /* pink tint strength */
+  --scrim-alpha:.5;  /* fade wallpaper strength */
+  --pink-alpha:.80;   /* pink tint strength */
 }
 
 /* Base */
