@@ -1,34 +1,39 @@
-::root{
-  /* ...existing vars... */
-  --scrim-alpha: .28;  /* fade wallpaper */
-  --pink-alpha:  .40;  /* tint strength */
-}
-  --pink:#f6d1cb;         /* site tint */
-  --bg:#fff4f4;           /* base */
+:root{
+  /* Palette */
+  --pink:#f6d1cb;
+  --bg:#fff4f4;
   --text:#111;
   --muted:#555;
   --card:#ffffff;
   --accent:#d52c3f;
   --accent-dark:#b22035;
+
+  /* Effects */
   --radius:14px;
   --shadow:0 10px 26px rgba(0,0,0,.07);
+
+  /* New controls */
+  --scrim-alpha:.28;  /* fade wallpaper strength */
+  --pink-alpha:.40;   /* pink tint strength */
 }
 
 /* Base */
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 body{
-  font:16px/1.6 "Georgia Regular", Georgia Regular, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  font:16px/1.6 "Helvetica Neue", Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color:var(--text);
 
-  /* Wallpaper + pink overlay */
+  /* Softer, more transparent wallpaper with pink tint */
+  background-color:#f6d1cb; /* fallback */
   background-image:
-    linear-gradient(var(--pink), var(--pink)),
-    url("/assets/hgs-preloved-classy-background.png");
-  background-blend-mode:multiply;
-  background-size:cover;
-  background-position:center;
-  background-attachment:fixed;
+    linear-gradient(rgba(255,255,255,var(--scrim-alpha)), rgba(255,255,255,var(--scrim-alpha))),
+    linear-gradient(rgba(246,209,203,var(--pink-alpha)), rgba(246,209,203,var(--pink-alpha))),
+    url("/assets/logo-wallpaper.png");
+  background-blend-mode: normal, multiply, normal;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* Accessibility */
@@ -41,7 +46,7 @@ body{
 }
 :focus-visible{ outline:3px solid #222; outline-offset:2px; }
 
-/* Fold-fit: keep key sections within first viewport where possible */
+/* Fold-fit: keep key sections visible in first viewport where possible */
 .fold-fit{
   min-height:100svh;
   display:grid;
@@ -60,13 +65,15 @@ body{
   padding-block:min(5vh,28px);
 }
 .hero-logo{
-  /* +70% scale: min 240px, mid 39vh, max 540px */
+  /* +50% size */
   width:clamp(240px, 39vh, 540px);
   height:auto;
   display:block;
   filter:drop-shadow(0 8px 18px rgba(0,0,0,.12));
   margin-bottom:min(2.2vh,22px);
 }
+
+/* Buttons */
 .btn{
   appearance:none;
   display:inline-block;
@@ -85,10 +92,11 @@ body{
 .btn:active{ transform:translateY(0); box-shadow:0 4px 10px rgba(213,44,63,.18); }
 .btn-secondary{ box-shadow:0 4px 14px rgba(0,0,0,.08); }
 
-/* Card (About + Contact inside) */
+/* Sections */
 .section{ padding: min(3vh,24px) min(4vw,24px); }
 .card{
-  background: transparent;                          /* transparent about card */
+  /* Transparent About card with thin border */
+  background: transparent;
   border:1px solid rgba(0,0,0,.08);
   border-radius:var(--radius);
   box-shadow:none;
@@ -97,7 +105,8 @@ body{
   text-align:center;
 }
 
-/* Typography */
+/* Crisp typography on transparent background */
+#about{ -webkit-font-smoothing:auto; -moz-osx-font-smoothing:auto; text-rendering:optimizeSpeed; }
 h2{
   margin:0 0 min(1.3vh,12px);
   font-size:clamp(18px, 2.4vh, 26px);
@@ -113,8 +122,10 @@ p{
   max-width:68ch;
   font-size:clamp(14px, 2.0vh, 18px);
 }
+/* 50% larger About body text (keep if requested) */
+#about p{ font-size:clamp(21px, 3.0vh, 27px); line-height:1.6; }
 
-/* Form */
+/* Form (transparent “ghost” inputs) */
 .form{
   display:grid;
   grid-template-columns:1fr;
@@ -128,7 +139,7 @@ input, textarea{
   width:100%;
   padding:min(1.6vh,12px);
   border-radius:10px;
-  background:transparent;                            /* transparent fields */
+  background:transparent;
   border:1.6px solid rgba(0,0,0,.78);
   color:#111;
   font-size:clamp(14px, 1.9vh, 16px);
@@ -147,7 +158,7 @@ input:focus-visible, textarea:focus-visible{
   font-size:.95rem;
 }
 
-/* Very short displays */
+/* Short displays */
 @media (max-height:700px){
   .hero{ padding-block:min(3.5vh,18px); }
   .section{ padding-block:min(2.2vh,16px); }
