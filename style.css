@@ -1,5 +1,4 @@
 :root{
-  /* Pink tint and accent */
   --pink:#f6d1cb;         /* site tint */
   --bg:#fff4f4;           /* base */
   --text:#111;
@@ -18,7 +17,7 @@ body{
   font:16px/1.6 "Helvetica Neue", Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color:var(--text);
 
-  /* Wallpaper + pink overlay (no image edit needed) */
+  /* Wallpaper + pink overlay */
   background-image:
     linear-gradient(var(--pink), var(--pink)),
     url("/assets/logo-wallpaper.png");
@@ -38,14 +37,11 @@ body{
 }
 :focus-visible{ outline:3px solid #222; outline-offset:2px; }
 
-/* -----------------------------
-   FOLD-FIT LAYOUT
-   Ensures hero, about, contact are visible in first viewport
-   ----------------------------- */
+/* Fold-fit: keep key sections within first viewport where possible */
 .fold-fit{
-  min-height:100svh;              /* account for mobile UI */
+  min-height:100svh;
   display:grid;
-  grid-template-rows:auto auto;   /* hero + about/contact card */
+  grid-template-rows:auto auto;
   align-content:start;
   gap:min(2vh,16px);
   padding-block:min(4vh,24px);
@@ -60,8 +56,8 @@ body{
   padding-block:min(5vh,28px);
 }
 .hero-logo{
-  /* Scales with viewport height so it shrinks on short phones */
-  width:clamp(160px, 26vh, 360px);
+  /* +50% scale: min 240px, mid 39vh, max 540px */
+  width:clamp(240px, 39vh, 540px);
   height:auto;
   display:block;
   filter:drop-shadow(0 8px 18px rgba(0,0,0,.12));
@@ -88,17 +84,16 @@ body{
 /* Card (About + Contact inside) */
 .section{ padding: min(3vh,24px) min(4vw,24px); }
 .card{
-  /* Transparent by request, but kept readable on busy bg via subtle border */
-  background: transparent;
+  background: transparent;                          /* transparent about card */
   border:1px solid rgba(0,0,0,.08);
   border-radius:var(--radius);
   box-shadow:none;
   max-width: 880px;
-  margin:0 auto;                  /* no large margins to save vertical space */
+  margin:0 auto;
   text-align:center;
 }
 
-/* Typography tuned for fold-fit */
+/* Typography */
 h2{
   margin:0 0 min(1.3vh,12px);
   font-size:clamp(18px, 2.4vh, 26px);
@@ -115,7 +110,7 @@ p{
   font-size:clamp(14px, 2.0vh, 18px);
 }
 
-/* Form (centered under paragraph) */
+/* Form */
 .form{
   display:grid;
   grid-template-columns:1fr;
@@ -129,8 +124,7 @@ input, textarea{
   width:100%;
   padding:min(1.6vh,12px);
   border-radius:10px;
-  /* Transparent inputs per request, keep contrast via border */
-  background:transparent;
+  background:transparent;                            /* transparent fields */
   border:1.6px solid rgba(0,0,0,.78);
   color:#111;
   font-size:clamp(14px, 1.9vh, 16px);
@@ -141,7 +135,7 @@ input:focus-visible, textarea:focus-visible{
   outline:2px solid #000; outline-offset:2px; border-color:#000;
 }
 
-/* Footer kept out of the fold-fit grid to avoid pushing content below the fold */
+/* Footer */
 .site-footer{
   text-align:center;
   padding:18px 12px 24px;
@@ -149,9 +143,8 @@ input:focus-visible, textarea:focus-visible{
   font-size:.95rem;
 }
 
-/* Very short displays: compress spacing and scale elements further */
+/* Very short displays */
 @media (max-height:700px){
-  .hero-logo{ width:clamp(140px, 20vh, 300px); margin-bottom:10px; }
   .hero{ padding-block:min(3.5vh,18px); }
   .section{ padding-block:min(2.2vh,16px); }
   textarea{ min-height:clamp(56px, 10vh, 96px); }
@@ -160,6 +153,5 @@ input:focus-visible, textarea:focus-visible{
 /* Narrow phones */
 @media (max-width:380px){
   .fold-fit{ padding-inline:min(3.5vw,18px); }
-  .hero-logo{ width:clamp(140px, 24vh, 280px); }
 }
 .hidden{ position:absolute; left:-9999px; }
