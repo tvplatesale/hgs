@@ -134,4 +134,8 @@ input:focus-visible, textarea:focus-visible{
 @media (max-width:600px){
   .hero{ padding-top:84px }
   .form{ margin-top:16px }
+}/* Make only the About section transparent */
+#about.card{
+  background: transparent;
+  box-shadow: none;   /* optional: remove card shadow */
 }
