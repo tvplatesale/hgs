@@ -14,7 +14,7 @@
 
   /* New controls */
   --scrim-alpha:.5;  /* fade wallpaper strength */
-  --pink-alpha:10.80;   /* pink tint strength */
+  --pink-alpha: 80;   /* pink tint strength */
 }
 
 /* Base */
