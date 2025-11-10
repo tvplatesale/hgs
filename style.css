@@ -29,7 +29,7 @@ body{
   background-image:
     linear-gradient(rgba(255,255,255,var(--scrim-alpha)), rgba(255,255,255,var(--scrim-alpha))),
     linear-gradient(rgba(246,209,203,var(--pink-alpha)), rgba(246,209,203,var(--pink-alpha))),
-    url("/assets/logo-wallpaper.png");
+    url("/assets/hgs-preloved-classy-background.png");
   background-blend-mode: normal, multiply, normal;
   background-size: cover;
   background-position: center;
