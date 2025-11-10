@@ -1,4 +1,8 @@
-:root{
+::root{
+  /* ...existing vars... */
+  --scrim-alpha: .28;  /* fade wallpaper */
+  --pink-alpha:  .40;  /* tint strength */
+}
   --pink:#f6d1cb;         /* site tint */
   --bg:#fff4f4;           /* base */
   --text:#111;
