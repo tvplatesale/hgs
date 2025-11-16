@@ -21,8 +21,8 @@ body{
   background-color:#000; /* fallback while image loads */
   background-image: url("/assets/wallpaper-hotgirl.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center top;
+  background-size: contain;
+  background-position: center center;
   background-attachment: fixed;      /* comment out if iOS jank */
 }
 
