@@ -21,18 +21,21 @@ body {
   padding: 0;
 }
 
-/* BODY + BACKGROUND (wallpaper repeats down page) */
+/* BODY + BACKGROUND (single wallpaper, resized to fit) */
 body {
   font: 16px/1.6 "Helvetica Neue", Arial, system-ui, -apple-system,
     Segoe UI, Roboto, sans-serif;
   color: var(--text);
 
+  /* fallback colour behind image */
   background-color: var(--pink);
+
+  /* main wallpaper */
   background-image: url("/assets/wallpaper-hotgirl.png");
-  background-repeat: repeat-y;        /* tile vertically as you scroll */
-  background-size: cover;             /* fill width of screen */
-  background-position: center top;
-  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-size: contain;        /* fit full image */
+  background-position: center top; /* keep subject visible */
+  background-attachment: scroll;   /* safer on mobile */
 
   /* 🔥 cursor */
   cursor: url("data:image/svg+xml;utf8,\
