@@ -1,8 +1,8 @@
 :root{
   /* Palette */
   --pink: #f6d1cb;
-  --text: #111111;
-  --muted: #555555;
+  --text: #ffffff;
+  --muted: #f3f3f3;
   --accent: #d52c3f;
   --accent-dark: #b22035;
 
@@ -21,21 +21,18 @@ body {
   padding: 0;
 }
 
-/* BODY + BACKGROUND (single wallpaper, resized to fit) */
+/* BODY + BACKGROUND (wallpaper repeats down page) */
 body {
   font: 16px/1.6 "Helvetica Neue", Arial, system-ui, -apple-system,
     Segoe UI, Roboto, sans-serif;
   color: var(--text);
 
-  /* fallback colour behind image */
   background-color: var(--pink);
-
-  /* main wallpaper */
   background-image: url("/assets/wallpaper-hotgirl.png");
-  background-repeat: repeat;
-  background-size: contain;        /* fit full image */
-  background-position: center top; /* keep subject visible */
-  background-attachment: scroll;   /* safer on mobile */
+  background-repeat: repeat-y;        /* tile vertically as you scroll */
+  background-size: cover;             /* fill width of screen */
+  background-position: center top;
+  background-attachment: scroll;
 
   /* 🔥 cursor */
   cursor: url("data:image/svg+xml;utf8,\
@@ -66,7 +63,7 @@ body {
   z-index: 1000;
 }
 :focus-visible {
-  outline: 3px solid #222;
+  outline: 3px solid #ffffff;
   outline-offset: 2px;
 }
 
@@ -96,14 +93,19 @@ main {
   text-align: center;
 }
 
+/* Bigger logo + glow so it pops over wallpaper */
 .hero-logo {
   width: clamp(160px, 28vw, 260px);
   height: auto;
   display: block;
   margin: 0 auto 24px;
+
+  filter:
+    drop-shadow(0 0 10px rgba(0, 0, 0, 0.85))
+    drop-shadow(0 6px 18px rgba(0, 0, 0, 0.75));
 }
 
-/* Primary CTA button */
+/* Primary CTA button with strong glow */
 .btn {
   appearance: none;
   display: inline-block;
@@ -115,7 +117,9 @@ main {
   padding: 12px 32px;
   border-radius: 999px;
   border: 0;
-  box-shadow: 0 12px 26px rgba(213, 44, 63, 0.45);
+  box-shadow:
+    0 0 14px rgba(0, 0, 0, 0.85),
+    0 18px 36px rgba(213, 44, 63, 0.7);
   cursor: pointer;
   transition: transform 0.14s ease, box-shadow 0.14s ease,
     background 0.18s ease;
@@ -123,14 +127,18 @@ main {
 .btn:hover {
   background: var(--accent-dark);
   transform: translateY(-1px);
-  box-shadow: 0 16px 32px rgba(213, 44, 63, 0.55);
+  box-shadow:
+    0 0 18px rgba(0, 0, 0, 0.95),
+    0 22px 40px rgba(213, 44, 63, 0.8);
 }
 .btn:active {
   transform: translateY(0);
-  box-shadow: 0 8px 18px rgba(213, 44, 63, 0.38);
+  box-shadow:
+    0 0 10px rgba(0, 0, 0, 0.8),
+    0 12px 24px rgba(213, 44, 63, 0.6);
 }
 
-/* Make sure interactive elements show pointer semantics */
+/* Ensure interactive elements show pointer semantics */
 a,
 button,
 input[type=submit],
@@ -143,17 +151,28 @@ input[type=button]{
   padding: 24px 16px 32px;
 }
 
-/* TRANSPARENT ABOUT / CONTACT CARD */
+/* TRANSPARENT ABOUT / CONTACT (no frosted fill) */
 .card {
   max-width: 900px;
   margin: 0 auto 24px;
 
-  background: transparent; /* no fill */
+  background: transparent;
   border-radius: var(--radius);
   border: none;
   box-shadow: none;
 
   padding: 24px 20px 28px;
+}
+
+/* Make text readable over busy background */
+#about h2,
+#about h3,
+#about p,
+#contact h2,
+label,
+.site-footer small {
+  color: #ffffff;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
 }
 
 /* About text */
@@ -170,22 +189,19 @@ input[type=button]{
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 800;
-  color: #ffffff;
 }
 
 #about h3 {
   margin: 0 0 18px;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
   font-weight: 800;
-  color: #ffffff;
 }
 
 #about p {
   margin: 0 auto;
   max-width: 70ch;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  color: #ffffff; /* white text over wallpaper */
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 /* Contact section */
@@ -199,7 +215,6 @@ input[type=button]{
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 800;
-  color: #ffffff;
 }
 
 /* Form */
@@ -212,16 +227,16 @@ input[type=button]{
 label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: #ffffff;
 }
 
+/* Dark translucent boxes so fields are readable */
 input,
 textarea {
   width: 100%;
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.85);
-  background: rgba(0, 0, 0, 0.28); /* transparent dark boxes */
+  background: rgba(0, 0, 0, 0.3);
   font-size: 0.95rem;
   color: #ffffff;
 }
@@ -233,7 +248,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 input:focus-visible,
@@ -253,8 +268,6 @@ textarea:focus-visible {
   text-align: center;
   padding: 0 12px 20px;
   font-size: 0.8rem;
-  color: #ffffff;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive tweaks */
@@ -265,11 +278,8 @@ textarea:focus-visible {
   .card {
     padding: 32px 36px 36px;
   }
-  #about h3 {
-    font-size: 1.25rem;
-  }
   #about p {
-    font-size: 1rem;
+    font-size: 1.05rem;
   }
 }
 
