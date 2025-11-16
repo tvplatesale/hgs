@@ -33,9 +33,8 @@ body {
   /* main wallpaper */
      background-color:#f6d1cb;
   background-image:
-    linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)),
     url("/assets/wallpaper-hotgirl.PNG");
-  background-repeat:repeat-y, repeat-y;
+  background-repeat:round;
   background-size:auto, cover;
   background-position:center top, center top;
 }
