@@ -34,7 +34,7 @@ body {
   background-image: url("/assets/wallpaper-hotgirl.PNG");
   background-repeat: repeat;
   background-size: contain;        /* fit full image */
-  background-position: center top; /* keep subject visible */
+  background-position: tiles; /* keep subject visible */
   background-attachment: scroll;   /* safer on mobile */
 
   /* 🔥 cursor */
