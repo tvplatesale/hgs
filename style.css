@@ -31,7 +31,7 @@ body {
   background-color: var(--pink);
 
   /* main wallpaper */
-  background-image: url("/assets/wallpaper-hotgirl.png");
+  background-image: url("/assets/wallpaper-hotgirl.PNG");
   background-repeat: repeat;
   background-size: contain;        /* fit full image */
   background-position: center top; /* keep subject visible */
