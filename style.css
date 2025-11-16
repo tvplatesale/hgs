@@ -1,204 +1,223 @@
 :root{
   /* Palette */
-  --text:#ffffff;
-  --muted:#cccccc;
+  --pink:#f6d1cb;
+  --bg:#fff4f4;
+  --text:#111111;
+  --muted:#555555;
+  --card:#ffffff;
   --accent:#d52c3f;
   --accent-dark:#b22035;
 
   /* Effects */
   --radius:14px;
-  --shadow:0 10px 26px rgba(0,0,0,.35);
+  --shadow:0 18px 40px rgba(0,0,0,.12);
 }
 
 /* Base reset */
-*{box-sizing:border-box}
-html,body{margin:0;padding:0}
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
 
-/* GLOBAL BODY + WALLPAPER BACKGROUND */
+/* BODY + BACKGROUND (same look as screenshot, new image) */
 body{
   font:16px/1.6 "Helvetica Neue", Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color:var(--text);
 
-  /* single full-page wallpaper */
-  background-color:#000000; /* fallback */
-  background-image:url("/assets/wallpaper-hotgirl.png"); /* make sure file name matches assets */
-  background-repeat:no-repeat;
+  background-color:var(--pink);
+  background-image:
+    linear-gradient(rgba(246,209,203,0.88), rgba(246,209,203,0.88)), /* soft pink wash */
+    url("/assets/wallpaper-hotgirl.png");                             /* NEW wallpaper */
+  background-blend-mode:multiply;
   background-size:cover;
   background-position:center top;
-  background-attachment:fixed;
+  background-repeat:no-repeat;
+  background-attachment:scroll; /* safer on mobile */
 }
 
-/* Accessibility: skip link + focus */
+/* Accessibility */
 .skip-link{
-  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+  position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
 }
 .skip-link:focus{
-  position:fixed; left:12px; top:12px; width:auto; height:auto; padding:10px 14px;
-  background:#000; color:#fff; border-radius:8px; z-index:1000;
+  position:fixed;left:12px;top:12px;width:auto;height:auto;
+  padding:10px 14px;background:#000;color:#fff;
+  border-radius:8px;z-index:1000;
 }
-:focus-visible{ outline:3px solid #ffffff; outline-offset:2px; }
+:focus-visible{outline:3px solid #222;outline-offset:2px;}
 
-/* LAYOUT: keep hero + about/contact within first viewport where possible */
-.fold-fit{
+/* PAGE LAYOUT */
+main{
   min-height:100svh;
-  display:grid;
-  grid-template-rows:auto auto;
-  align-content:start;
-  gap:min(2vh,16px);
-  padding-block:min(4vh,24px);
-  padding-inline:min(4vw,24px);
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
 }
 
 /* HERO */
 .hero{
-  display:grid;
-  place-items:center;
+  padding:40px 16px 24px;
   text-align:center;
-  padding-block:min(5vh,28px);
-  background:transparent;
 }
 
-/* smaller, but still strong logo */
 .hero-logo{
-  width:clamp(140px, 22vh, 260px);
+  width:clamp(160px, 28vw, 260px);
   height:auto;
   display:block;
-  margin:0 auto 16px;
-  filter:drop-shadow(0 6px 14px rgba(0,0,0,.75));
+  margin:0 auto 24px;
 }
 
-/* BUTTONS */
+/* CTA BUTTON */
 .btn{
   appearance:none;
   display:inline-block;
   background:var(--accent);
-  color:#fff;
+  color:#ffffff;
   text-decoration:none;
-  font-weight:800;
+  font-weight:700;
   letter-spacing:.2px;
-  padding:12px 26px;
+  padding:12px 32px;
   border-radius:999px;
   border:0;
-  box-shadow:0 6px 16px rgba(0,0,0,.55);
-  transition:transform .12s ease, background .2s ease, box-shadow .2s ease;
+  box-shadow:0 12px 26px rgba(213,44,63,.45);
+  transition:transform .14s ease, box-shadow .14s ease, background .18s ease;
 }
-.btn:hover{ background:var(--accent-dark); transform:translateY(-1px); }
-.btn:active{ transform:translateY(0); box-shadow:0 4px 10px rgba(0,0,0,.6); }
-.btn-secondary{ box-shadow:0 4px 12px rgba(0,0,0,.5); }
+.btn:hover{
+  background:var(--accent-dark);
+  transform:translateY(-1px);
+  box-shadow:0 16px 32px rgba(213,44,63,.55);
+}
+.btn:active{
+  transform:translateY(0);
+  box-shadow:0 8px 18px rgba(213,44,63,.38);
+}
 
-/* SECTIONS / CARD WRAPPER */
+/* CONTENT SECTIONS */
 .section{
-  padding:min(3vh,24px) min(4vw,24px);
+  padding:24px 16px 32px;
 }
 
 .card{
-  background:transparent;                           /* let wallpaper show */
-  border:1px solid rgba(255,255,255,.22);          /* subtle frame */
+  max-width:900px;
+  margin:0 auto 24px;
+  background:rgba(255,255,255,0.96);
   border-radius:var(--radius);
   box-shadow:var(--shadow);
-  max-width:880px;
-  margin:0 auto;
+  padding:24px 20px 28px;
+}
+
+/* ABOUT TEXT – same feel as screenshot */
+#about{
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
   text-align:center;
 }
 
-/* TYPOGRAPHY – tuned for dark, busy background */
-#about{
-  -webkit-font-smoothing:auto;
-  -moz-osx-font-smoothing:auto;
-  text-rendering:optimizeSpeed;
-}
-
-h2{
-  margin:0 0 min(1.3vh,12px);
-  font-size:clamp(18px, 2.4vh, 26px);
-  letter-spacing:2px;
+#about h2{
+  margin:0 0 16px;
+  font-size:1rem;
+  letter-spacing:0.18em;
   text-transform:uppercase;
-  color:#ffffff;
   font-weight:800;
-  text-shadow:0 2px 6px rgba(0,0,0,.85);
 }
 
-p{
-  margin:0 auto;
-  color:#ffffff;
-  line-height:1.5;
-  max-width:68ch;
-  font-size:clamp(14px, 2.0vh, 18px);
-  text-shadow:0 2px 6px rgba(0,0,0,.85);
+#about h3{
+  margin:0 0 18px;
+  font-size:1.15rem;
+  font-weight:800;
 }
 
-/* optional: slightly larger About body copy */
 #about p{
-  font-size:clamp(18px, 2.6vh, 22px);
+  margin:0 auto;
+  max-width:70ch;
+  font-size:0.95rem;
   line-height:1.6;
+  color:var(--text);
 }
 
 /* CONTACT FORM */
-.form{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:min(1.6vh,12px);
-  max-width:560px;
-  margin:min(2vh,16px) auto 0;
+#contact{
   text-align:left;
 }
 
+#contact h2{
+  margin:0 0 16px;
+  font-size:1rem;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  font-weight:800;
+  text-align:left;
+}
+
+.form{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:12px;
+}
+
 label{
+  font-size:0.85rem;
   font-weight:600;
-  font-size:clamp(14px, 1.8vh, 16px);
-  color:#ffffff;
-  text-shadow:0 1px 3px rgba(0,0,0,.9);
+  color:var(--text);
 }
 
 input,
 textarea{
   width:100%;
-  padding:min(1.6vh,12px);
+  padding:10px 12px;
   border-radius:10px;
-
-  /* semi-transparent boxes over wallpaper */
-  background:rgba(0,0,0,.55);
-  border:1.4px solid rgba(255,255,255,.7);
-  color:#ffffff;
-
-  font-size:clamp(14px, 1.9vh, 16px);
-  box-shadow:0 3px 10px rgba(0,0,0,.7);
+  border:1px solid rgba(0,0,0,.12);
+  background:#ffffff;
+  font-size:0.95rem;
+  color:var(--text);
 }
 
-textarea{ min-height:clamp(64px, 12vh, 110px); }
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
 
 input::placeholder,
 textarea::placeholder{
-  color:rgba(255,255,255,.65);
+  color:rgba(0,0,0,.45);
 }
 
 input:focus-visible,
 textarea:focus-visible{
-  outline:2px solid #ffffff;
+  outline:2px solid var(--accent);
   outline-offset:2px;
-  border-color:#ffffff;
+  border-color:var(--accent);
+}
+
+.form button{
+  justify-self:flex-start;
 }
 
 /* FOOTER */
 .site-footer{
   text-align:center;
-  padding:18px 12px 24px;
+  padding:0 12px 20px;
+  font-size:0.8rem;
   color:var(--muted);
-  font-size:.95rem;
-  text-shadow:0 1px 3px rgba(0,0,0,.9);
 }
 
-/* SHORT DISPLAYS – compress spacing a bit */
-@media (max-height:700px){
-  .hero{ padding-block:min(3.5vh,18px); }
-  .section{ padding-block:min(2.2vh,16px); }
-  textarea{ min-height:clamp(56px, 10vh, 96px); }
+/* RESPONSIVE TWEAKS */
+@media (min-width:768px){
+  .hero{
+    padding-top:56px;
+  }
+  .card{
+    padding:32px 36px 36px;
+  }
+  #about h3{
+    font-size:1.25rem;
+  }
+  #about p{
+    font-size:1rem;
+  }
 }
 
-/* NARROW PHONES */
-@media (max-width:380px){
-  .fold-fit{ padding-inline:min(3.5vw,18px); }
+@media (min-width:1024px){
+  .hero{
+    padding-top:64px;
+  }
 }
-
-/* Utility */
-.hidden{ position:absolute; left:-9999px; }
