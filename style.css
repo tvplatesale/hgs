@@ -1,21 +1,13 @@
 :root{
   /* Palette */
-  --pink:#f6d1cb;
-  --bg:#fff4f4;
   --text:#111;
   --muted:#555;
-  --card:#ffffff;
   --accent:#d52c3f;
   --accent-dark:#b22035;
 
   /* Effects */
   --radius:14px;
   --shadow:0 10px 26px rgba(0,0,0,.07);
-
-  /* New controls */
-  --scrim-alpha: .55;   /* lower = less white */
-  --pink-alpha:  .98;   /* higher = more pink */70
-}
 }
 
 /* Base */
@@ -25,16 +17,13 @@ body{
   font:16px/1.6 "Helvetica Neue", Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
   color:var(--text);
 
-  /* Softer, more transparent wallpaper with pink tint */
-  background-color:#f6d1cb; /* fallback */
-  background-image:
-    linear-gradient(rgba(255,255,255,var(--scrim-alpha)), rgba(255,255,255,var(--scrim-alpha))),
-    linear-gradient(rgba(246,209,203,var(--pink-alpha)), rgba(246,209,203,var(--pink-alpha))),
-    url("/assets/hgs-preloved-classy-background.png");
-  background-blend-mode: normal, multiply, normal;
+  /* SINGLE IMAGE BACKGROUND — no gradients, no tint */
+  background-color:#000; /* fallback while image loads */
+  background-image: url("/assets/wallpaper-hotgirl.png");
+  background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-position: center top;
+  background-attachment: fixed;      /* comment out if iOS jank */
 }
 
 /* Accessibility */
@@ -47,7 +36,7 @@ body{
 }
 :focus-visible{ outline:3px solid #222; outline-offset:2px; }
 
-/* Fold-fit: keep key sections visible in first viewport where possible */
+/* Keep hero + about/contact visible where possible */
 .fold-fit{
   min-height:100svh;
   display:grid;
@@ -66,11 +55,11 @@ body{
   padding-block:min(5vh,28px);
 }
 .hero-logo{
-  /* +50% size */
+  /* 50% larger version */
   width:clamp(240px, 39vh, 540px);
   height:auto;
   display:block;
-  filter:drop-shadow(0 8px 18px rgba(0,0,0,.12));
+  filter:drop-shadow(0 8px 18px rgba(0,0,0,.18));
   margin-bottom:min(2.2vh,22px);
 }
 
@@ -96,7 +85,7 @@ body{
 /* Sections */
 .section{ padding: min(3vh,24px) min(4vw,24px); }
 .card{
-  /* Transparent About card with thin border */
+  /* Transparent About card with thin border for separation */
   background: transparent;
   border:1px solid rgba(0,0,0,.08);
   border-radius:var(--radius);
@@ -123,10 +112,10 @@ p{
   max-width:68ch;
   font-size:clamp(14px, 2.0vh, 18px);
 }
-/* 50% larger About body text (keep if requested) */
+/* 50% larger About copy (per earlier request) */
 #about p{ font-size:clamp(21px, 3.0vh, 27px); line-height:1.6; }
 
-/* Form (transparent “ghost” inputs) */
+/* Form (transparent inputs) */
 .form{
   display:grid;
   grid-template-columns:1fr;
@@ -159,7 +148,7 @@ input:focus-visible, textarea:focus-visible{
   font-size:.95rem;
 }
 
-/* Short displays */
+/* Very short displays */
 @media (max-height:700px){
   .hero{ padding-block:min(3.5vh,18px); }
   .section{ padding-block:min(2.2vh,16px); }
@@ -170,4 +159,10 @@ input:focus-visible, textarea:focus-visible{
 @media (max-width:380px){
   .fold-fit{ padding-inline:min(3.5vw,18px); }
 }
+
+/* iOS Safari fix: avoid 'fixed' jank on very old versions */
+/* @supports (-webkit-touch-callout: none){
+  body{ background-attachment: scroll; }
+} */
+
 .hidden{ position:absolute; left:-9999px; }
