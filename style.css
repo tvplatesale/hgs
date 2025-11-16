@@ -3,7 +3,6 @@
   --pink: #f6d1cb;
   --text: #111111;
   --muted: #555555;
-  --card: #ffffff;
   --accent: #d52c3f;
   --accent-dark: #b22035;
 
@@ -22,24 +21,27 @@ body {
   padding: 0;
 }
 
-/* BODY + BACKGROUND (pink wash + updated wallpaper) */
+/* BODY + BACKGROUND (single wallpaper, resized to fit) */
 body {
   font: 16px/1.6 "Helvetica Neue", Arial, system-ui, -apple-system,
     Segoe UI, Roboto, sans-serif;
   color: var(--text);
 
+  /* fallback colour behind image */
   background-color: var(--pink);
-  background-image:
-    linear-gradient(
-      rgba(246, 209, 203, 0.88),
-      rgba(246, 209, 203, 0.88)
-    ),
-    url("/assets/wallpaper-hotgirl.png"); /* updated wallpaper asset */
-  background-blend-mode: multiply;
-  background-size: cover;
-  background-position: center top;
+
+  /* main wallpaper */
+  background-image: url("/assets/wallpaper-hotgirl.png");
   background-repeat: no-repeat;
-  background-attachment: scroll; /* safer on mobile */
+  background-size: contain;        /* fit full image */
+  background-position: center top; /* keep subject visible */
+  background-attachment: scroll;   /* safer on mobile */
+
+  /* 🔥 cursor */
+  cursor: url("data:image/svg+xml;utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'>\
+  <text y='24' font-size='24'>🔥</text>\
+</svg>") 16 16, auto;
 }
 
 /* Accessibility */
@@ -128,24 +130,28 @@ main {
   box-shadow: 0 8px 18px rgba(213, 44, 63, 0.38);
 }
 
+/* Make sure interactive elements show pointer semantics */
+a,
+button,
+input[type=submit],
+input[type=button]{
+  cursor: pointer;
+}
+
 /* Sections / cards */
 .section {
   padding: 24px 16px 32px;
 }
 
-/* FROSTED TRANSPARENT ABOUT / CONTACT CARD */
+/* TRANSPARENT ABOUT / CONTACT CARD */
 .card {
   max-width: 900px;
   margin: 0 auto 24px;
 
-  /* frosted glass over wallpaper */
-  background: rgba(255, 255, 255, 0.32); /* transparent */
+  background: transparent; /* no fill */
   border-radius: var(--radius);
-  border: 1px solid rgba(255, 255, 255, 0.75);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  border: none;
+  box-shadow: none;
 
   padding: 24px 20px 28px;
 }
@@ -164,12 +170,14 @@ main {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 800;
+  color: #ffffff;
 }
 
 #about h3 {
   margin: 0 0 18px;
   font-size: 1.15rem;
   font-weight: 800;
+  color: #ffffff;
 }
 
 #about p {
@@ -177,7 +185,7 @@ main {
   max-width: 70ch;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: var(--text);
+  color: #ffffff; /* white text over wallpaper */
 }
 
 /* Contact section */
@@ -191,6 +199,7 @@ main {
   letter-spacing: 0.18em;
   text-transform: uppercase;
   font-weight: 800;
+  color: #ffffff;
 }
 
 /* Form */
@@ -203,7 +212,7 @@ main {
 label {
   font-size: 0.85rem;
   font-weight: 600;
-  color: var(--text);
+  color: #ffffff;
 }
 
 input,
@@ -211,10 +220,10 @@ textarea {
   width: 100%;
   padding: 10px 12px;
   border-radius: 10px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  background: rgba(255, 255, 255, 0.85); /* slightly translucent inputs */
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  background: rgba(0, 0, 0, 0.28); /* transparent dark boxes */
   font-size: 0.95rem;
-  color: var(--text);
+  color: #ffffff;
 }
 
 textarea {
@@ -224,7 +233,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(0, 0, 0, 0.45);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 input:focus-visible,
@@ -232,6 +241,7 @@ textarea:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 2px;
   border-color: var(--accent);
+  background: rgba(0, 0, 0, 0.35);
 }
 
 .form button {
@@ -243,7 +253,8 @@ textarea:focus-visible {
   text-align: center;
   padding: 0 12px 20px;
   font-size: 0.8rem;
-  color: var(--muted);
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 /* Responsive tweaks */
@@ -272,18 +283,4 @@ textarea:focus-visible {
 .hidden {
   position: absolute;
   left: -9999px;
-}/* Fire emoji cursor */
-body{
-  cursor: url("data:image/svg+xml;utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'>\
-  <text y='24' font-size='24'>🔥</text>\
-</svg>") 16 16, auto;
-}
-
-/* Make sure interactive elements still show pointer semantics */
-a,
-button,
-input[type=submit],
-input[type=button]{
-  cursor: pointer;
 }
