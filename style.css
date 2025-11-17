@@ -22,21 +22,17 @@ body {
 }
 
 /* BODY + BACKGROUND (single wallpaper, resized to fit) */
-body {
-  font: 16px/1.6 "Helvetica Neue", Arial, system-ui, -apple-system,
-    Segoe UI, Roboto, sans-serif;
-  color: var(--text);
+body{
+  font:16px/1.6 "Helvetica Neue", Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color:var(--text);
 
-  /* fallback colour behind image */
-  background-color: var(--pink);
-
-  /* main wallpaper */
-     background-color:#f6d1cb;
-  background-image:
-    url("/assets/wallpaper-hotgirl.PNG");
-  background-repeat:round;
-  background-size:auto, cover;
-  background-position:center top, center top;
+  /* FULL-PAGE WALLPAPER, NO BG COLOUR */
+  background-image: url("/assets/wallpaper-hotgirl.png"); /* update path/name if needed */
+  background-repeat: no-repeat;
+  background-size: cover;        /* fill viewport, stretch/crop as needed */
+  background-position: center top;
+  background-attachment: scroll; /* moves with the page */
+}
 }
 
   /* 🔥 cursor */
