@@ -166,15 +166,15 @@ input[type=button]{
   padding: 24px 20px 28px;
 }
 
-/* Make text readable over busy background */
+/* ABOUT card text: black, white glow, Georgia serif */
 #about h2,
 #about h3,
-#about p,
-#contact h2,
-label,
-.site-footer small {
-  color: #ff0000;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+#about p {
+  color: #000000;
+  font-family: Georgia, "Times New Roman", serif;
+  text-shadow:
+    0 0 4px rgba(255, 255, 255, 0.9),
+    0 0 8px rgba(255, 255, 255, 0.7);
 }
 
 /* About text */
