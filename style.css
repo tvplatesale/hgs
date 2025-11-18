@@ -33,7 +33,7 @@ body {
   background-position: center top;
   background-attachment: scroll; /* moves with content */
 
-  /* global pink text glow */
+  /* global soft pink text glow */
   text-shadow: 0 0 12px #ffccff;
 
   /* 🔥 cursor */
@@ -82,6 +82,13 @@ body {
 }
 
 /* Layout */
+.fold-fit{
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
 main {
   min-height: 100svh;
   display: flex;
@@ -95,27 +102,23 @@ main {
   text-align: center;
 }
 
-/* HGS smoking lips logo with pink glow (#ffccff) */
+/* HGS smoking lips logo with pink glow */
 .hero-logo {
   width: clamp(320px, 56vw, 520px);
   height: auto;
   display: block;
   margin: 0 auto 24px;
-
   filter:
-    drop-shadow(0 0 10px rgba(255, 204, 255, 0.85))
-    drop-shadow(0 0 22px rgba(255, 204, 255, 0.85));
+    drop-shadow(0 0 10px rgba(255, 51, 153, 0.9))
+    drop-shadow(0 0 22px rgba(255, 51, 153, 0.8));
 }
 
-/* LIPS CTA (image + SHOP NOW text) */
+/* LIPS CTA (replaces text button) */
 .lips-cta {
-  display: inline-flex;
-  flex-direction: column;
-  align-items: center;
+  display: inline-block;
   margin-bottom: 8px;
   text-decoration: none;
 }
-
 .lips-image {
   width: clamp(110px, 26vw, 180px);
   height: auto;
@@ -126,19 +129,6 @@ main {
     drop-shadow(0 10px 26px rgba(0, 0, 0, 0.9));
   transition: transform 0.14s ease, filter 0.14s ease;
 }
-
-/* SHOP NOW label under lips */
-.lips-label {
-  margin-top: 6px;
-  font-size: 0.85rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #000000;
-  text-shadow: 0 0 8px #ff3399cc;
-}
-
-/* Hover / focus – apply to both image + text */
 .lips-cta:hover .lips-image,
 .lips-cta:focus-visible .lips-image {
   transform: translateY(-2px) scale(1.03);
@@ -146,18 +136,14 @@ main {
     drop-shadow(0 0 10px rgba(255, 51, 153, 0.9))
     drop-shadow(0 14px 30px rgba(0, 0, 0, 0.95));
 }
-.lips-cta:hover .lips-label,
-.lips-cta:focus-visible .lips-label {
-  text-shadow: 0 0 12px #ff3399;
-}
 
 /* Generic button (used for Send on contact form) */
 .btn {
   appearance: none;
   display: inline-block;
-  background: var(--accent);
-  color: #000000;                /* black button text */
-  text-shadow: 0 0 8px #ff3399;  /* pink glow on button text */
+  background: #ffccff;            /* new button color */
+  color: #000000;                 /* black button text */
+  text-shadow: 0 0 8px #ff3399;   /* brighter pink glow on button text */
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 0.2px;
@@ -166,23 +152,23 @@ main {
   border: 0;
   box-shadow:
     0 0 14px rgba(0, 0, 0, 0.85),
-    0 18px 36px rgba(213, 44, 63, 0.7);
+    0 18px 36px rgba(255, 204, 255, 0.7);
   cursor: pointer;
   transition: transform 0.14s ease, box-shadow 0.14s ease,
     background 0.18s ease;
 }
 .btn:hover {
-  background: var(--accent-dark);
+  background: #ffb3ff;
   transform: translateY(-1px);
   box-shadow:
     0 0 18px rgba(0, 0, 0, 0.95),
-    0 22px 40px rgba(213, 44, 63, 0.8);
+    0 22px 40px rgba(255, 204, 255, 0.8);
 }
 .btn:active {
   transform: translateY(0);
   box-shadow:
     0 0 10px rgba(0, 0, 0, 0.8),
-    0 12px 24px rgba(213, 44, 63, 0.6);
+    0 12px 24px rgba(255, 204, 255, 0.6);
 }
 
 /* Ensure interactive elements show pointer semantics */
@@ -198,7 +184,7 @@ input[type=button]{
   padding: 24px 16px 32px;
 }
 
-/* Transparent ABOUT / CONTACT cards */
+/* Transparent ABOUT + CONTACT card */
 .card{
   max-width: 900px;
   margin: 0 auto 24px;
@@ -214,11 +200,10 @@ input[type=button]{
 #about h2,
 #about h3,
 #about p,
-#contact h2,
 label,
 .site-footer small {
   color: #000000;
-  text-shadow: 0 0 10px #ff3399cc;
+  text-shadow: 0 0 10px #ffccff;
 }
 
 /* About text */
@@ -244,19 +229,6 @@ label,
   line-height: 1.7;
 }
 
-/* Contact */
-#contact {
-  text-align: centre;
-}
-
-#contact h2 {
-  margin: 0 0 16px;
-  font-size: 0.95rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 800;
-}
-
 /* Form */
 .form {
   display: grid;
@@ -276,10 +248,10 @@ textarea {
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  background: rgba(255, 204, 255, .5);
+  background: rgba(255, 204, 255, 0.85);
   font-size: 0.95rem;
   color: #000000;
-  text-shadow: 0 0 8px #ff3399cc;
+  text-shadow: 0 0 8px #ff3399;
 }
 textarea {
   min-height: 110px;
