@@ -34,12 +34,12 @@ body {
   background-attachment: scroll; /* moves with content */
 
   /* global soft pink text glow */
-  text-shadow: 0 0 12px #ffccff;
+  text-shadow: 0 0 12px #ff3399cc;
 
   /* 🔥 cursor */
   cursor: url("data:image/svg+xml;utf8,\
 <svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'>\
-  <text y='24' font-size='24'>🔥</text>\
+  <text y='24' font-size='32'>🔥</text>\
 </svg>") 16 16, auto;
 }
 
@@ -104,13 +104,13 @@ main {
 
 /* HGS smoking lips logo with pink glow */
 .hero-logo {
-  width: clamp(320px, 56vw, 520px);
+  width: clamp(480px, 84vw, 780px);
   height: auto;
   display: block;
   margin: 0 auto 24px;
   filter:
-    drop-shadow(0 0 10px rgba(255, 204, 255, 0.85))
-    drop-shadow(0 0 22px rgba(255, 204, 255, 0.85));
+    drop-shadow(0 0 10px rgba(255, 204, 255, 0.3))
+    drop-shadow(0 0 22px rgba(255, 204, 255, 0.3));
 }
 
 /* LIPS CTA (replaces text button) */
