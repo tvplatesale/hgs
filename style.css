@@ -197,7 +197,7 @@ input[type=button]{
 label,
 .site-footer small {
   color: #000000;
-  text-shadow: 0 0 10px #ffccff;
+  text-shadow: 0 0 10px #ff3399cc;
 }
 
 /* About text */
@@ -255,10 +255,10 @@ textarea {
   padding: 10px 12px;
   border-radius: 10px;
   border: 1px solid rgba(0, 0, 0, 0.25);
-  background: rgba(255, 51, 153, 0.8);
+  background: rgba(255, 204, 255, .5);
   font-size: 0.95rem;
   color: #000000;
-  text-shadow: 0 0 8px #ff3399;
+  text-shadow: 0 0 8px #ff3399cc;
 }
 textarea {
   min-height: 110px;
