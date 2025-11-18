@@ -1,7 +1,7 @@
 :root{
   /* Palette */
   --pink: #f6d1cb;
-  --text: #ff0000;
+  --text: #000000;
   --muted: #f3f3f3;
   --accent: #d52c3f;
   --accent-dark: #b22035;
@@ -32,8 +32,6 @@ body{
   background-size: cover;        /* fill viewport, stretch/crop as needed */
   background-position: center top;
   background-attachment: scroll; /* moves with the page */
-}
-}
 
   /* 🔥 cursor */
   cursor: url("data:image/svg+xml;utf8,\
@@ -101,43 +99,83 @@ main {
   display: block;
   margin: 0 auto 24px;
 
-    /* white neon-style glow */
+  /* white neon-style glow */
   filter:
     drop-shadow(0 0 10px rgba(255, 255, 255, 0.9))
     drop-shadow(0 0 22px rgba(255, 255, 255, 0.8));
 }
 
-/* Primary CTA button with strong glow */
+/* Heart-shaped CTAs: "Shop now" + "Send" */
 .btn {
-  appearance: none;
-  display: inline-block;
-  background: var(--accent);
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 0.2px;
-  padding: 12px 32px;
-  border-radius: 999px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 40px;
+
+  /* Heart colour fill */
+  background: #ff3300;
   border: 0;
+
+  /* Text: black, bold, Georgia serif, pink glow (also enforced globally) */
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  color: #000000;
+  text-decoration: none;
+  letter-spacing: 0.2px;
+  text-shadow:
+    0 0 3px rgba(255, 51, 0, 0.9),
+    0 0 6px rgba(255, 51, 0, 0.7),
+    0 0 10px rgba(255, 51, 0, 0.5);
+
+  /* Heart shape via clip-path */
+  clip-path: polygon(
+    50% 0%,
+    61% 7%,
+    68% 15%,
+    73% 25%,
+    75% 35%,
+    74% 45%,
+    71% 55%,
+    65% 65%,
+    57% 75%,
+    50% 82%,
+    43% 75%,
+    35% 65%,
+    29% 55%,
+    26% 45%,
+    25% 35%,
+    27% 25%,
+    32% 15%,
+    39% 7%
+  );
+
+  /* Outer glow / depth */
   box-shadow:
     0 0 14px rgba(0, 0, 0, 0.85),
-    0 18px 36px rgba(213, 44, 63, 0.7);
+    0 18px 36px rgba(255, 51, 0, 0.7);
+
   cursor: pointer;
-  transition: transform 0.14s ease, box-shadow 0.14s ease,
+  transition:
+    transform 0.14s ease,
+    box-shadow 0.14s ease,
     background 0.18s ease;
 }
+
 .btn:hover {
-  background: var(--accent-dark);
+  background: #ff5533;
   transform: translateY(-1px);
   box-shadow:
     0 0 18px rgba(0, 0, 0, 0.95),
-    0 22px 40px rgba(213, 44, 63, 0.8);
+    0 22px 40px rgba(255, 51, 0, 0.8);
 }
+
 .btn:active {
   transform: translateY(0);
   box-shadow:
     0 0 10px rgba(0, 0, 0, 0.8),
-    0 12px 24px rgba(213, 44, 63, 0.6);
+    0 12px 24px rgba(255, 51, 0, 0.6);
 }
 
 /* Ensure interactive elements show pointer semantics */
@@ -164,17 +202,6 @@ input[type=button]{
   box-shadow: none;
 
   padding: 24px 20px 28px;
-}
-
-/* ABOUT card text: black, white glow, Georgia serif */
-#about h2,
-#about h3,
-#about p {
-  color: #000000;
-  font-family: Georgia, "Times New Roman", serif;
-  text-shadow:
-    0 0 4px rgba(255, 255, 255, 0.9),
-    0 0 8px rgba(255, 255, 255, 0.7);
 }
 
 /* About text */
@@ -240,7 +267,7 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.85);
   background: rgba(0, 0, 0, 0.3);
   font-size: 0.95rem;
-  color: #ffffff;
+  color: #000000;
 }
 
 textarea {
@@ -250,7 +277,7 @@ textarea {
 
 input::placeholder,
 textarea::placeholder {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(0, 0, 0, 0.7);
 }
 
 input:focus-visible,
@@ -270,6 +297,18 @@ textarea:focus-visible {
   text-align: center;
   padding: 0 12px 20px;
   font-size: 0.8rem;
+}
+
+/* Global text style: black, bold, Georgia serif, pink glow (#ff3300) */
+body,
+body * {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  text-shadow:
+    0 0 3px rgba(255, 51, 0, 0.9),
+    0 0 6px rgba(255, 51, 0, 0.7),
+    0 0 10px rgba(255, 51, 0, 0.5);
 }
 
 /* Responsive tweaks */
