@@ -107,11 +107,15 @@ main {
     drop-shadow(0 0 22px rgba(255, 204, 255, 0.85));
 }
 
-/* LIPS CTA (replaces button) */
+/* LIPS CTA (image + SHOP NOW text) */
 .lips-cta {
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
   margin-bottom: 8px;
+  text-decoration: none;
 }
+
 .lips-image {
   width: clamp(110px, 26vw, 180px);
   height: auto;
@@ -122,12 +126,29 @@ main {
     drop-shadow(0 10px 26px rgba(0, 0, 0, 0.9));
   transition: transform 0.14s ease, filter 0.14s ease;
 }
+
+/* SHOP NOW label under lips */
+.lips-label {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #000000;
+  text-shadow: 0 0 8px #ff3399cc;
+}
+
+/* Hover / focus – apply to both image + text */
 .lips-cta:hover .lips-image,
 .lips-cta:focus-visible .lips-image {
   transform: translateY(-2px) scale(1.03);
   filter:
     drop-shadow(0 0 10px rgba(255, 51, 153, 0.9))
     drop-shadow(0 14px 30px rgba(0, 0, 0, 0.95));
+}
+.lips-cta:hover .lips-label,
+.lips-cta:focus-visible .lips-label {
+  text-shadow: 0 0 12px #ff3399;
 }
 
 /* Generic button (used for Send on contact form) */
